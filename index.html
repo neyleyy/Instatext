@@ -461,7 +461,32 @@ button {
 >
 
 <div class="actions">
+function likePost(element) {
 
+    const post = element.closest(".post");
+    const likesElement = post.querySelector(".likes");
+
+    let likes = parseInt(
+        likesElement.textContent.replace(/[^0-9]/g, "")
+    );
+
+    if (element.classList.contains("liked")) {
+
+        element.classList.remove("liked");
+        element.innerHTML = "♡";
+        likes--;
+
+    } else {
+
+        element.classList.add("liked");
+        element.innerHTML = "♥";
+        likes++;
+
+    }
+
+    likesElement.textContent =
+        likes.toLocaleString("en-US") + " likes";
+}
     <span class="action" onclick="likePost(this)">
         ♡
     </span>
