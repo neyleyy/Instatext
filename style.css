@@ -1,1 +1,204 @@
+```css
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f2f2f2;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    color: #111;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.app {
+    max-width: 430px;
+    margin: auto;
+    min-height: 100vh;
+    background: white;
+    padding-bottom: 65px;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    height: 58px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.top-icons {
+    font-size: 23px;
+}
+
+/* =========================
+   STORIES
+========================= */
+
+.stories {
+    display: flex;
+    gap: 14px;
+    padding: 12px 14px;
+    overflow-x: auto;
+    border-bottom: 1px solid #eee;
+}
+
+.story {
+    min-width: 65px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.story-ring {
+    width: 59px;
+    height: 59px;
+    margin: auto;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(
+        45deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
+}
+
+.story-ring img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+/* =========================
+   POSTS
+========================= */
+
+.post {
+    border-bottom: 1px solid #ddd;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 13px;
+}
+
+.avatar {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.username {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.location {
+    color: #777;
+    font-size: 11px;
+}
+
+.post-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.actions {
+    display: flex;
+    gap: 17px;
+    padding: 9px 13px 4px;
+    font-size: 25px;
+}
+
+.action {
+    cursor: pointer;
+    user-select: none;
+}
+
+.save {
+    margin-left: auto;
+}
+
+.liked {
+    color: #ed4956;
+}
+
+.likes {
+    padding: 0 13px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.caption {
+    padding: 6px 13px;
+    font-size: 14px;
+}
+
+/* =========================
+   COMMENTS
+========================= */
+
+.comments {
+    padding: 0 13px 13px;
+}
+
+.view-comments {
+    color: #777;
+    font-size: 13px;
+    cursor: pointer;
+    padding-top: 6px;
+}
+
+.comment-section {
+    display: none;
+    padding-top: 4px;
+}
+
+.comment-section.open {
+    display: block;
+}
+
+.comment {
+    padding: 7px 0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.comment-content {
+    line-height: 1.4;
+}
+
+.comment-content b {
+    font-weight: 700;
+}
+
+.reply-b
+```
 
