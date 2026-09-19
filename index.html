@@ -474,10 +474,46 @@ button {
     Long day. Don't ask.
 </div>
 
-<div class="comments">
+<div
+    class="comments view-comments"
+    onclick="toggleComments(this)"
+>
     View all 38 comments
 </div>
-```
+
+<div class="comment-section">
+
+    <div class="comment">
+        <b>@steverogers</b>
+        You okay?
+    </div>
+
+    <div class="comment">
+        <b>@samwilson</b>
+        That's definitely not convincing.
+    </div>
+
+    <div class="comment-list"></div>
+
+    <div class="comment-form">
+
+        <input
+            class="comment-input"
+            type="text"
+            placeholder="Add a comment..."
+            onkeydown="handleCommentKey(event, this)"
+        >
+
+        <button
+            class="comment-button"
+            onclick="addComment(this)"
+        >
+            Post
+        </button>
+
+    </div>
+
+</div>
 
 </article>
 
