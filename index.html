@@ -9,6 +9,18 @@
 * {
 box-sizing: border-box;
 }
+<script>
+function showProfile() {
+document.querySelectorAll('.page').forEach(page => {
+page.style.display = 'none';
+});
+
+const profile = document.getElementById('profile');
+if (profile) {
+profile.style.display = 'block';
+}
+}
+</script>
 
 body {
 margin: 0;
