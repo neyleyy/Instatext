@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
@@ -7,6 +6,7 @@
 <title>Instatext</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -18,7 +18,8 @@ body {
     color: #111;
 }
 
-button {
+button,
+input {
     font: inherit;
 }
 
@@ -30,7 +31,10 @@ button {
     padding-bottom: 65px;
 }
 
-/* TOP BAR */
+
+/* =========================
+   TOP BAR
+========================= */
 
 .topbar {
     height: 58px;
@@ -55,7 +59,10 @@ button {
     font-size: 23px;
 }
 
-/* STORIES */
+
+/* =========================
+   STORIES
+========================= */
 
 .stories {
     display: flex;
@@ -95,7 +102,10 @@ button {
     border: 3px solid white;
 }
 
-/* POST */
+
+/* =========================
+   POSTS
+========================= */
 
 .post {
     border-bottom: 1px solid #ddd;
@@ -166,10 +176,17 @@ button {
     padding: 0 13px 13px;
     color: #777;
     font-size: 13px;
+    cursor: pointer;
 }
+
+
+/* =========================
+   COMMENT SECTION
+========================= */
+
 .comment-section {
     display: none;
-    padding: 0 13px 13px;
+    padding: 0 13px 15px;
 }
 
 .comment-section.open {
@@ -178,27 +195,34 @@ button {
 
 .comment {
     display: flex;
-    gap: 8px;
+    gap: 5px;
     margin: 10px 0;
     font-size: 13px;
+    line-height: 1.4;
 }
 
 .comment b {
-    margin-right: 4px;
+    font-weight: 700;
 }
 
 .comment-form {
     display: flex;
     gap: 8px;
-    margin-top: 12px;
+    margin-top: 14px;
 }
 
 .comment-input {
     flex: 1;
+    min-width: 0;
     border: 1px solid #ddd;
     border-radius: 18px;
     padding: 8px 12px;
     outline: none;
+    background: #fafafa;
+}
+
+.comment-input:focus {
+    border-color: #aaa;
 }
 
 .comment-button {
@@ -210,10 +234,10 @@ button {
     cursor: pointer;
 }
 
-.view-comments {
-    cursor: pointer;
-}
-/* PROFILE */
+
+/* =========================
+   PROFILE
+========================= */
 
 .profile {
     display: none;
@@ -292,6 +316,11 @@ button {
     border-bottom: 2px solid #111;
 }
 
+
+/* =========================
+   GRIDS
+========================= */
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -304,7 +333,10 @@ button {
     object-fit: cover;
 }
 
-/* EXPLORE */
+
+/* =========================
+   EXPLORE
+========================= */
 
 .explore {
     display: none;
@@ -318,9 +350,13 @@ button {
     border-radius: 10px;
     padding: 10px 14px;
     font-size: 15px;
+    outline: none;
 }
 
-/* BOTTOM NAV */
+
+/* =========================
+   BOTTOM NAV
+========================= */
 
 .bottom-nav {
     position: fixed;
@@ -348,471 +384,753 @@ button {
     font-weight: 800;
 }
 
-.center-message {
-    text-align: center;
-    padding: 80px 25px;
-    color: #777;
-}
 </style>
-
 </head>
+
 
 <body>
 
 <div class="app">
 
-<!-- TOP BAR -->
+
+<!-- =========================
+     TOP BAR
+========================= -->
 
 <header class="topbar">
-    <div class="logo">Instatext</div>
 
-```
-<div class="top-icons">
-    ♡ &nbsp; ✉
-</div>
-```
+    <div class="logo">
+        Instatext
+    </div>
+
+    <div class="top-icons">
+        ♡ &nbsp; ✉
+    </div>
 
 </header>
 
-<!-- HOME -->
+
+<!-- =========================
+     HOME
+========================= -->
 
 <main id="home">
+
 
 <!-- STORIES -->
 
 <section class="stories">
 
-```
-<div class="story">
-    <div class="story-ring">
-        <img src="https://i.pravatar.cc/120?img=12">
-    </div>
-    <div>Your story</div>
-</div>
+    <div class="story">
 
-<div class="story">
-    <div class="story-ring">
-        <img src="https://i.pravatar.cc/120?img=11">
-    </div>
-    <div>buckybarnes</div>
-</div>
+        <div class="story-ring">
+            <img src="https://i.pravatar.cc/120?img=12">
+        </div>
 
-<div class="story">
-    <div class="story-ring">
-        <img src="https://i.pravatar.cc/120?img=13">
-    </div>
-    <div>steverogers</div>
-</div>
+        <div>Your story</div>
 
-<div class="story">
-    <div class="story-ring">
-        <img src="https://i.pravatar.cc/120?img=14">
     </div>
-    <div>samwilson</div>
-</div>
 
-<div class="story">
-    <div class="story-ring">
-        <img src="https://i.pravatar.cc/120?img=15">
+
+    <div class="story">
+
+        <div class="story-ring">
+            <img src="https://i.pravatar.cc/120?img=11">
+        </div>
+
+        <div>buckybarnes</div>
+
     </div>
-    <div>natasha</div>
-</div>
-```
+
+
+    <div class="story">
+
+        <div class="story-ring">
+            <img src="https://i.pravatar.cc/120?img=13">
+        </div>
+
+        <div>steverogers</div>
+
+    </div>
+
+
+    <div class="story">
+
+        <div class="story-ring">
+            <img src="https://i.pravatar.cc/120?img=14">
+        </div>
+
+        <div>samwilson</div>
+
+    </div>
+
+
+    <div class="story">
+
+        <div class="story-ring">
+            <img src="https://i.pravatar.cc/120?img=15">
+        </div>
+
+        <div>natasha</div>
+
+    </div>
 
 </section>
 
-<!-- POST 1 -->
+
+
+<!-- =========================
+     BUCKY POST
+========================= -->
 
 <article class="post">
 
-```
-<div class="post-header">
 
-    <img
-        class="avatar"
-        src="https://i.pravatar.cc/120?img=11"
-    >
-
-    <div>
-        <div class="username">@buckybarnes</div>
-        <div class="location">New York</div>
-    </div>
-
-</div>
-
-<img
-    class="post-image"
-    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80"
->
-
-<div class="actions">
-
-    <span class="action" onclick="likePost(this)">
-        ♡
-    </span>
-
-    <span class="action">
-        ♡
-    </span>
-
-    <span class="action">
-        ➤
-    </span>
-
-    <span class="action save">
-        ♡
-    </span>
-
-</div>
-
-<div class="likes" data-likes="2481">
-    2,481 likes
-</div>
-
-<div class="caption">
-    <b>@buckybarnes</b>
-    Long day. Don't ask.
-</div>
-
-<div
-    class="comments view-comments"
-    onclick="toggleComments(this)"
->
-    View all 38 comments
-</div>
-
-<div class="comment-section">
-
-    <div class="comment">
-        <b>@steverogers</b>
-        You okay?
-    </div>
-
-    <div class="comment">
-        <b>@samwilson</b>
-        That's definitely not convincing.
-    </div>
-
-    <div class="comment-list"></div>
-
-    <div class="comment-form">
-
-        <input
-            class="comment-input"
-            type="text"
-            placeholder="Add a comment..."
-            onkeydown="handleCommentKey(event, this)"
-        >
-
-        <button
-            class="comment-button"
-            onclick="addComment(this)"
-        >
-            Post
-        </button>
-
-    </div>
-
-</div>
-
-</article>
-
-<!-- POST 2 -->
-
-<article class="post">
-
-```
-<div class="post-header">
-
-    <img
-        class="avatar"
-        src="https://i.pravatar.cc/120?img=13"
-    >
-
-    <div>
-        <div class="username">@steverogers</div>
-        <div class="location">Brooklyn</div>
-    </div>
-
-</div>
-
-<img
-    class="post-image"
-    src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=900&q=80"
->
-
-<div class="actions">
-function likePost(element) {
-
-    const post = element.closest(".post");
-    const likesElement = post.querySelector(".likes");
-
-    let likes = parseInt(
-        likesElement.textContent.replace(/[^0-9]/g, "")
-    );
-
-    if (element.classList.contains("liked")) {
-
-        element.classList.remove("liked");
-        element.innerHTML = "♡";
-        likes--;
-
-    } else {
-
-        element.classList.add("liked");
-        element.innerHTML = "♥";
-        likes++;
-
-    }
-
-    likesElement.textContent =
-        likes.toLocaleString("en-US") + " likes";
-}
-    <span class="action" onclick="likePost(this)">
-        ♡
-    </span>
-
-    <span class="action">
-        ♡
-    </span>
-
-    <span class="action">
-        ➤
-    </span>
-
-    <span class="action save">
-        ♡
-    </span>
-
-</div>
-
-<div class="likes" data-likes="1903">
-    1,903 likes
-</div>
-
-<div class="caption">
-    <b>@steverogers</b>
-    Some things never change.
-</div>
-
-<div class="comments">
-    View all 21 comments
-</div>
-```
-
-</article>
-
-</main>
-
-<!-- EXPLORE -->
-
-<section id="explore" class="explore">
-
-```
-<input
-    class="search"
-    type="text"
-    placeholder="Search"
->
-
-<div class="grid">
-
-    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80">
-
-    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80">
-
-    <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=500&q=80">
-
-    <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=500&q=80">
-
-    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80">
-
-    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80">
-
-</div>
-```
-
-</section>
-
-<!-- PROFILE -->
-
-<section id="profile" class="profile">
-
-```
-<div class="profile-header">
-
-    <div class="profile-main">
+    <div class="post-header">
 
         <img
-            class="profile-avatar"
-            src="https://i.pravatar.cc/200?img=12"
+            class="avatar"
+            src="https://i.pravatar.cc/120?img=11"
         >
 
-        <div class="profile-stats">
+        <div>
 
-            <div class="profile-stat">
-                <strong>12</strong>
-                posts
+            <div class="username">
+                @buckybarnes
             </div>
 
-            <div class="profile-stat">
-                <strong>1,204</strong>
-                followers
-            </div>
-
-            <div class="profile-stat">
-                <strong>318</strong>
-                following
+            <div class="location">
+                New York
             </div>
 
         </div>
 
     </div>
 
-    <div class="profile-name">
-        Your Name
+
+    <img
+        class="post-image"
+        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80"
+    >
+
+
+    <div class="actions">
+
+        <span
+            class="action"
+            onclick="likePost(this)"
+        >
+            ♡
+        </span>
+
+        <span class="action">
+            ♡
+        </span>
+
+        <span class="action">
+            ➤
+        </span>
+
+        <span class="action save">
+            ♡
+        </span>
+
     </div>
 
-    <div class="profile-bio">
-        ✨ living somewhere between reality & fiction
+
+    <div
+        class="likes"
+        data-likes="2481"
+    >
+        2,481 likes
     </div>
 
-    <button class="edit-profile">
-        Edit profile
-    </button>
 
-</div>
+    <div class="caption">
 
+        <b>@buckybarnes</b>
+        Long day. Don't ask.
 
-<div class="profile-tabs">
-
-    <button>▦</button>
-    <button>▶</button>
-    <button>♙</button>
-
-</div>
+    </div>
 
 
-<div class="grid">
+    <div
+        class="comments"
+        onclick="toggleComments(this)"
+    >
+        View all 38 comments
+    </div>
 
-    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80">
 
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80">
+    <div class="comment-section">
 
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80">
 
-    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80">
+        <div class="comment">
+            <b>@steverogers</b>
+            You okay?
+        </div>
 
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80">
 
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80">
+        <div class="comment">
+            <b>@samwilson</b>
+            That's definitely not convincing.
+        </div>
 
-</div>
-```
+
+        <div class="comment-list"></div>
+
+
+        <div class="comment-form">
+
+            <input
+                class="comment-input"
+                type="text"
+                placeholder="Add a comment..."
+                onkeydown="handleCommentKey(event, this)"
+            >
+
+            <button
+                class="comment-button"
+                onclick="addComment(this)"
+            >
+                Post
+            </button>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+
+<!-- =========================
+     STEVE POST
+========================= -->
+
+<article class="post">
+
+
+    <div class="post-header">
+
+        <img
+            class="avatar"
+            src="https://i.pravatar.cc/120?img=13"
+        >
+
+        <div>
+
+            <div class="username">
+                @steverogers
+            </div>
+
+            <div class="location">
+                Brooklyn
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <img
+        class="post-image"
+        src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=900&q=80"
+    >
+
+
+    <div class="actions">
+
+        <span
+            class="action"
+            onclick="likePost(this)"
+        >
+            ♡
+        </span>
+
+        <span class="action">
+            ♡
+        </span>
+
+        <span class="action">
+            ➤
+        </span>
+
+        <span class="action save">
+            ♡
+        </span>
+
+    </div>
+
+
+    <div
+        class="likes"
+        data-likes="1903"
+    >
+        1,903 likes
+    </div>
+
+
+    <div class="caption">
+
+        <b>@steverogers</b>
+        Some things never change.
+
+    </div>
+
+
+    <div
+        class="comments"
+        onclick="toggleComments(this)"
+    >
+        View all 21 comments
+    </div>
+
+
+    <div class="comment-section">
+
+
+        <div class="comment">
+            <b>@buckybarnes</b>
+            Some things never change.
+        </div>
+
+
+        <div class="comment">
+            <b>@samwilson</b>
+            Old man.
+        </div>
+
+
+        <div class="comment-list"></div>
+
+
+        <div class="comment-form">
+
+            <input
+                class="comment-input"
+                type="text"
+                placeholder="Add a comment..."
+                onkeydown="handleCommentKey(event, this)"
+            >
+
+            <button
+                class="comment-button"
+                onclick="addComment(this)"
+            >
+                Post
+            </button>
+
+        </div>
+
+    </div>
+
+</article>
+
+</main>
+
+
+
+<!-- =========================
+     EXPLORE
+========================= -->
+
+<section
+    id="explore"
+    class="explore"
+>
+
+
+    <input
+        class="search"
+        type="text"
+        placeholder="Search"
+    >
+
+
+    <div class="grid">
+
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80">
+
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80">
+
+        <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=500&q=80">
+
+        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=500&q=80">
+
+        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80">
+
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80">
+
+    </div>
 
 </section>
 
-<!-- BOTTOM NAV -->
+
+
+<!-- =========================
+     PROFILE
+========================= -->
+
+<section
+    id="profile"
+    class="profile"
+>
+
+
+    <div class="profile-header">
+
+
+        <div class="profile-main">
+
+
+            <img
+                class="profile-avatar"
+                src="https://i.pravatar.cc/200?img=12"
+            >
+
+
+            <div class="profile-stats">
+
+
+                <div class="profile-stat">
+
+                    <strong>12</strong>
+                    posts
+
+                </div>
+
+
+                <div class="profile-stat">
+
+                    <strong>1,204</strong>
+                    followers
+
+                </div>
+
+
+                <div class="profile-stat">
+
+                    <strong>318</strong>
+                    following
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-name">
+            Your Name
+        </div>
+
+
+        <div class="profile-bio">
+            ✨ living somewhere between reality & fiction
+        </div>
+
+
+        <button class="edit-profile">
+            Edit profile
+        </button>
+
+
+    </div>
+
+
+    <div class="profile-tabs">
+
+        <button>▦</button>
+        <button>▶</button>
+        <button>♙</button>
+
+    </div>
+
+
+    <div class="grid">
+
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80">
+
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80">
+
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80">
+
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80">
+
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80">
+
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80">
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     BOTTOM NAV
+========================= -->
 
 <nav class="bottom-nav">
 
-```
-<button
-    class="nav-button active"
-    onclick="showPage('home', this)"
->
-    ⌂
-</button>
 
-<button
-    class="nav-button"
-    onclick="showPage('explore', this)"
->
-    ⌕
-</button>
+    <button
+        class="nav-button active"
+        onclick="showPage('home', this)"
+    >
+        ⌂
+    </button>
 
-<button
-    class="nav-button"
-    onclick="alert('Dodawanie posta dodamy w następnej wersji ❤️')"
->
-    ＋
-</button>
 
-<button
-    class="nav-button"
-    onclick="alert('Aktywność dodamy w następnej wersji ❤️')"
->
-    ♡
-</button>
+    <button
+        class="nav-button"
+        onclick="showPage('explore', this)"
+    >
+        ⌕
+    </button>
 
-<button
-    class="nav-button"
-    onclick="showPage('profile', this)"
->
-    ◉
-</button>
-```
+
+    <button
+        class="nav-button"
+        onclick="alert('Dodawanie posta dodamy w następnej wersji ❤️')"
+    >
+        ＋
+    </button>
+
+
+    <button
+        class="nav-button"
+        onclick="alert('Aktywność dodamy w następnej wersji ❤️')"
+    >
+        ♡
+    </button>
+
+
+    <button
+        class="nav-button"
+        onclick="showPage('profile', this)"
+    >
+        ◉
+    </button>
+
 
 </nav>
 
+
 </div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
-/* PRZEŁĄCZANIE STRON */
+
+/* =========================
+   ZMIANA STRON
+========================= */
 
 function showPage(page, button) {
 
     document.getElementById("home").style.display = "none";
+
     document.getElementById("explore").style.display = "none";
+
     document.getElementById("profile").style.display = "none";
+
 
     document.getElementById(page).style.display = "block";
 
-    document.querySelectorAll(".nav-button")
-        .forEach(btn => btn.classList.remove("active"));
+
+    document.querySelectorAll(".nav-button").forEach(function(btn) {
+
+        btn.classList.remove("active");
+
+    });
+
 
     if (button) {
+
         button.classList.add("active");
+
     }
 
+
     window.scrollTo(0, 0);
+
 }
 
 
-/* PROFIL */
+
+/* =========================
+   PROFIL
+========================= */
 
 function showProfile() {
+
     showPage("profile");
+
 }
 
 
-/* LAJKI */
+
+/* =========================
+   LAJKI
+========================= */
 
 function likePost(element) {
 
     const post = element.closest(".post");
+
     const likesElement = post.querySelector(".likes");
 
-    let likes = parseInt(likesElement.dataset.likes);
+
+    let likes = parseInt(
+        likesElement.textContent.replace(/[^0-9]/g, "")
+    );
+
 
     if (element.classList.contains("liked")) {
 
         element.classList.remove("liked");
+
         element.innerHTML = "♡";
+
         likes--;
 
-    } else {
+    }
+
+    else {
 
         element.classList.add("liked");
+
         element.innerHTML = "♥";
+
         likes++;
 
     }
 
-    likesElement.dataset.likes = likes;
-    likesElement.innerHTML =
+
+    likesElement.textContent =
         likes.toLocaleString("en-US") + " likes";
+
+}
+
+
+
+/* =========================
+   KOMENTARZE — OTWIERANIE
+========================= */
+
+function toggleComments(element) {
+
+    const post = element.closest(".post");
+
+    const section =
+        post.querySelector(".comment-section");
+
+
+    section.classList.toggle("open");
+
+
+    if (section.classList.contains("open")) {
+
+        element.textContent = "Hide comments";
+
+    }
+
+    else {
+
+        element.textContent = "View all comments";
+
+    }
+
+}
+
+
+
+/* =========================
+   DODAWANIE KOMENTARZA
+========================= */
+
+function addComment(button) {
+
+    const post =
+        button.closest(".post");
+
+
+    const input =
+        post.querySelector(".comment-input");
+
+
+    const commentList =
+        post.querySelector(".comment-list");
+
+
+    const text =
+        input.value.trim();
+
+
+    if (text === "") {
+
+        return;
+
+    }
+
+
+    const comment =
+        document.createElement("div");
+
+
+    comment.className = "comment";
+
+
+    const username =
+        document.createElement("b");
+
+
+    username.textContent = "@you";
+
+
+    comment.appendChild(username);
+
+
+    const textNode =
+        document.createTextNode(" " + text);
+
+
+    comment.appendChild(textNode);
+
+
+    commentList.appendChild(comment);
+
+
+    input.value = "";
+
+}
+
+
+
+/* =========================
+   ENTER = DODAJ KOMENTARZ
+========================= */
+
+function handleCommentKey(event, input) {
+
+    if (event.key === "Enter") {
+
+        const button =
+            input.parentElement.querySelector(".comment-button");
+
+
+        addComment(button);
+
+    }
+
 }
 
 </script>
