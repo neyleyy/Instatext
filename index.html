@@ -167,7 +167,52 @@ button {
     color: #777;
     font-size: 13px;
 }
+.comment-section {
+    display: none;
+    padding: 0 13px 13px;
+}
 
+.comment-section.open {
+    display: block;
+}
+
+.comment {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0;
+    font-size: 13px;
+}
+
+.comment b {
+    margin-right: 4px;
+}
+
+.comment-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.comment-input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    padding: 8px 12px;
+    outline: none;
+}
+
+.comment-button {
+    border: none;
+    background: #111;
+    color: white;
+    border-radius: 18px;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+.view-comments {
+    cursor: pointer;
+}
 /* PROFILE */
 
 .profile {
