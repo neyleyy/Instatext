@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
@@ -7,326 +8,309 @@
 
 <style>
 * {
-box-sizing: border-box;
+    box-sizing: border-box;
 }
-<script>
-function showProfile() {
-document.querySelectorAll('.page').forEach(page => {
-page.style.display = 'none';
-});
-
-const profile = document.getElementById('profile');
-if (profile) {
-profile.style.display = 'block';
-}
-}
-</script>
 
 body {
-margin: 0;
-background: #f2f2f2;
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-color: #111;
+    margin: 0;
+    background: #f2f2f2;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    color: #111;
 }
 
 button {
-font: inherit;
+    font: inherit;
 }
 
 .app {
-max-width: 430px;
-margin: auto;
-min-height: 100vh;
-background: white;
-padding-bottom: 65px;
+    max-width: 430px;
+    margin: auto;
+    min-height: 100vh;
+    background: white;
+    padding-bottom: 65px;
 }
 
 /* TOP BAR */
 
 .topbar {
-height: 58px;
-border-bottom: 1px solid #ddd;
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 0 16px;
-position: sticky;
-top: 0;
-background: white;
-z-index: 10;
+    height: 58px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
 }
 
 .logo {
-font-size: 25px;
-font-weight: 800;
-letter-spacing: -1px;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
 .top-icons {
-font-size: 23px;
+    font-size: 23px;
 }
 
 /* STORIES */
 
 .stories {
-display: flex;
-gap: 14px;
-padding: 12px 14px;
-overflow-x: auto;
-border-bottom: 1px solid #eee;
+    display: flex;
+    gap: 14px;
+    padding: 12px 14px;
+    overflow-x: auto;
+    border-bottom: 1px solid #eee;
 }
 
 .story {
-min-width: 65px;
-text-align: center;
-font-size: 11px;
+    min-width: 65px;
+    text-align: center;
+    font-size: 11px;
 }
 
 .story-ring {
-width: 59px;
-height: 59px;
-margin: auto;
-border-radius: 50%;
-padding: 2px;
-background: linear-gradient(
-45deg,
-#feda75,
-#fa7e1e,
-#d62976,
-#962fbf,
-#4f5bd5
-);
+    width: 59px;
+    height: 59px;
+    margin: auto;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(
+        45deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
 }
 
 .story-ring img {
-width: 100%;
-height: 100%;
-border-radius: 50%;
-object-fit: cover;
-border: 3px solid white;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
 }
 
 /* POST */
 
 .post {
-border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 .post-header {
-display: flex;
-align-items: center;
-gap: 10px;
-padding: 11px 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 13px;
 }
 
 .avatar {
-width: 39px;
-height: 39px;
-border-radius: 50%;
-object-fit: cover;
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .username {
-font-weight: 700;
-font-size: 14px;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .location {
-color: #777;
-font-size: 11px;
+    color: #777;
+    font-size: 11px;
 }
 
 .post-image {
-width: 100%;
-aspect-ratio: 1 / 1;
-object-fit: cover;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
 
 .actions {
-display: flex;
-gap: 17px;
-padding: 9px 13px 4px;
-font-size: 25px;
+    display: flex;
+    gap: 17px;
+    padding: 9px 13px 4px;
+    font-size: 25px;
 }
 
 .action {
-cursor: pointer;
+    cursor: pointer;
+    user-select: none;
 }
 
 .save {
-margin-left: auto;
+    margin-left: auto;
 }
 
 .liked {
-color: #ed4956;
+    color: #ed4956;
 }
 
 .likes {
-padding: 0 13px;
-font-size: 14px;
-font-weight: 700;
+    padding: 0 13px;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .caption {
-padding: 6px 13px;
-font-size: 14px;
+    padding: 6px 13px;
+    font-size: 14px;
 }
 
 .comments {
-padding: 0 13px 13px;
-color: #777;
-font-size: 13px;
+    padding: 0 13px 13px;
+    color: #777;
+    font-size: 13px;
 }
 
 /* PROFILE */
 
 .profile {
-display: none;
+    display: none;
 }
 
 .profile-header {
-padding: 20px 16px 10px;
+    padding: 20px 16px 10px;
 }
 
 .profile-main {
-display: flex;
-align-items: center;
-gap: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .profile-avatar {
-width: 86px;
-height: 86px;
-border-radius: 50%;
-object-fit: cover;
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .profile-stats {
-display: flex;
-gap: 17px;
-text-align: center;
-flex: 1;
+    display: flex;
+    gap: 17px;
+    text-align: center;
+    flex: 1;
 }
 
 .profile-stat {
-font-size: 12px;
+    font-size: 12px;
 }
 
 .profile-stat strong {
-display: block;
-font-size: 17px;
+    display: block;
+    font-size: 17px;
 }
 
 .profile-name {
-margin-top: 13px;
-font-weight: 700;
+    margin-top: 13px;
+    font-weight: 700;
 }
 
 .profile-bio {
-font-size: 14px;
-margin-top: 3px;
+    font-size: 14px;
+    margin-top: 3px;
 }
 
 .edit-profile {
-width: 100%;
-margin-top: 15px;
-height: 34px;
-border: 1px solid #ccc;
-background: white;
-border-radius: 7px;
-font-weight: 600;
+    width: 100%;
+    margin-top: 15px;
+    height: 34px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 7px;
+    font-weight: 600;
 }
 
 .profile-tabs {
-display: flex;
-justify-content: space-around;
-border-top: 1px solid #ddd;
-border-bottom: 1px solid #ddd;
-margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-top: 15px;
 }
 
 .profile-tabs button {
-width: 33.33%;
-height: 45px;
-border: 0;
-background: white;
-font-size: 20px;
+    width: 33.33%;
+    height: 45px;
+    border: 0;
+    background: white;
+    font-size: 20px;
 }
 
 .profile-tabs button:first-child {
-border-bottom: 2px solid #111;
+    border-bottom: 2px solid #111;
 }
 
 .grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 2px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
 }
 
 .grid img {
-width: 100%;
-aspect-ratio: 1;
-object-fit: cover;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
 }
 
 /* EXPLORE */
 
 .explore {
-display: none;
+    display: none;
 }
 
 .search {
-margin: 12px;
-width: calc(100% - 24px);
-border: none;
-background: #eee;
-border-radius: 10px;
-padding: 10px 14px;
-font-size: 15px;
+    margin: 12px;
+    width: calc(100% - 24px);
+    border: none;
+    background: #eee;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 15px;
 }
 
 /* BOTTOM NAV */
 
 .bottom-nav {
-position: fixed;
-bottom: 0;
-left: 50%;
-transform: translateX(-50%);
-width: min(100%, 430px);
-height: 62px;
-background: white;
-border-top: 1px solid #ddd;
-display: flex;
-align-items: center;
-justify-content: space-around;
-z-index: 20;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100%, 430px);
+    height: 62px;
+    background: white;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 20;
 }
 
 .nav-button {
-border: 0;
-background: transparent;
-font-size: 25px;
-cursor: pointer;
+    border: 0;
+    background: transparent;
+    font-size: 25px;
+    cursor: pointer;
 }
 
 .active {
-font-weight: 800;
-}
-
-/* OTHER */
-
-.hidden {
-display: none !important;
+    font-weight: 800;
 }
 
 .center-message {
-text-align: center;
-padding: 80px 25px;
-color: #777;
+    text-align: center;
+    padding: 80px 25px;
+    color: #777;
 }
 </style>
-</head>
 
+</head>
 
 <body>
 
@@ -335,13 +319,15 @@ color: #777;
 <!-- TOP BAR -->
 
 <header class="topbar">
-<div class="logo">Instatext</div>
+    <div class="logo">Instatext</div>
 
+```
 <div class="top-icons">
-♡ &nbsp; ✉
+    ♡ &nbsp; ✉
 </div>
-</header>
+```
 
+</header>
 
 <!-- HOME -->
 
@@ -351,333 +337,376 @@ color: #777;
 
 <section class="stories">
 
+```
 <div class="story">
-<div class="story-ring">
-<img src="https://i.pravatar.cc/120?img=12">
-</div>
-<div>Your story</div>
+    <div class="story-ring">
+        <img src="https://i.pravatar.cc/120?img=12">
+    </div>
+    <div>Your story</div>
 </div>
 
 <div class="story">
-<div class="story-ring">
-<img src="https://i.pravatar.cc/120?img=11">
-</div>
-<div>buckybarnes</div>
-</div>
-
-<div class="story">
-<div class="story-ring">
-<img src="https://i.pravatar.cc/120?img=13">
-</div>
-<div>steverogers</div>
+    <div class="story-ring">
+        <img src="https://i.pravatar.cc/120?img=11">
+    </div>
+    <div>buckybarnes</div>
 </div>
 
 <div class="story">
-<div class="story-ring">
-<img src="https://i.pravatar.cc/120?img=14">
-</div>
-<div>samwilson</div>
+    <div class="story-ring">
+        <img src="https://i.pravatar.cc/120?img=13">
+    </div>
+    <div>steverogers</div>
 </div>
 
 <div class="story">
-<div class="story-ring">
-<img src="https://i.pravatar.cc/120?img=15">
+    <div class="story-ring">
+        <img src="https://i.pravatar.cc/120?img=14">
+    </div>
+    <div>samwilson</div>
 </div>
-<div>natasha</div>
+
+<div class="story">
+    <div class="story-ring">
+        <img src="https://i.pravatar.cc/120?img=15">
+    </div>
+    <div>natasha</div>
 </div>
+```
 
 </section>
-
 
 <!-- POST 1 -->
 
 <article class="post">
 
+```
 <div class="post-header">
 
-<img class="avatar"
-src="https://i.pravatar.cc/120?img=11">
+    <img
+        class="avatar"
+        src="https://i.pravatar.cc/120?img=11"
+    >
 
-<div>
-<div class="username">@buckybarnes</div>
-<div class="location">New York</div>
+    <div>
+        <div class="username">@buckybarnes</div>
+        <div class="location">New York</div>
+    </div>
+
 </div>
 
-</div>
-
-<img class="post-image"
-src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80">
+<img
+    class="post-image"
+    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80"
+>
 
 <div class="actions">
 
-<span class="action" onclick="likePost(this)">
-♡
-</span>
+    <span class="action" onclick="likePost(this)">
+        ♡
+    </span>
 
-<span class="action">
-♡
-</span>
+    <span class="action">
+        ♡
+    </span>
 
-<span class="action">
-➤
-</span>
+    <span class="action">
+        ➤
+    </span>
 
-<span class="action save">
-♡
-</span>
+    <span class="action save">
+        ♡
+    </span>
 
 </div>
 
-<div class="likes">
-2,481 likes
+<div class="likes" data-likes="2481">
+    2,481 likes
 </div>
 
 <div class="caption">
-<b>@buckybarnes</b>
-Long day. Don't ask.
+    <b>@buckybarnes</b>
+    Long day. Don't ask.
 </div>
 
 <div class="comments">
-View all 38 comments
+    View all 38 comments
 </div>
+```
 
 </article>
-
 
 <!-- POST 2 -->
 
 <article class="post">
 
+```
 <div class="post-header">
 
-<img class="avatar"
-src="https://i.pravatar.cc/120?img=13">
+    <img
+        class="avatar"
+        src="https://i.pravatar.cc/120?img=13"
+    >
 
-<div>
-<div class="username">@steverogers</div>
-<div class="location">Brooklyn</div>
+    <div>
+        <div class="username">@steverogers</div>
+        <div class="location">Brooklyn</div>
+    </div>
+
 </div>
 
-</div>
-
-<img class="post-image"
-src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=900&q=80">
+<img
+    class="post-image"
+    src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=900&q=80"
+>
 
 <div class="actions">
 
-<span class="action" onclick="likePost(this)">
-♡
-</span>
+    <span class="action" onclick="likePost(this)">
+        ♡
+    </span>
 
-<span class="action">
-♡
-</span>
+    <span class="action">
+        ♡
+    </span>
 
-<span class="action">
-➤
-</span>
+    <span class="action">
+        ➤
+    </span>
 
-<span class="action save">
-♡
-</span>
+    <span class="action save">
+        ♡
+    </span>
 
 </div>
 
-<div class="likes">
-1,903 likes
+<div class="likes" data-likes="1903">
+    1,903 likes
 </div>
 
 <div class="caption">
-<b>@steverogers</b>
-Some things never change.
+    <b>@steverogers</b>
+    Some things never change.
 </div>
 
 <div class="comments">
-View all 21 comments
+    View all 21 comments
 </div>
+```
 
 </article>
 
 </main>
 
-
 <!-- EXPLORE -->
 
 <section id="explore" class="explore">
 
+```
 <input
-class="search"
-type="text"
-placeholder="Search">
+    class="search"
+    type="text"
+    placeholder="Search"
+>
 
 <div class="grid">
 
-<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80">
+    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80">
 
-<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80">
+    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80">
 
-<img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=500&q=80">
+    <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=500&q=80">
 
-<img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=500&q=80">
+    <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=500&q=80">
 
-<img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80">
+    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80">
 
-<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80">
 
 </div>
+```
 
 </section>
-
 
 <!-- PROFILE -->
 
 <section id="profile" class="profile">
 
+```
 <div class="profile-header">
 
-<div class="profile-main">
+    <div class="profile-main">
 
-<img
-class="profile-avatar"
-src="https://i.pravatar.cc/200?img=12">
+        <img
+            class="profile-avatar"
+            src="https://i.pravatar.cc/200?img=12"
+        >
 
-<div class="profile-stats">
+        <div class="profile-stats">
 
-<div class="profile-stat">
-<strong>12</strong>
-posts
-</div>
+            <div class="profile-stat">
+                <strong>12</strong>
+                posts
+            </div>
 
-<div class="profile-stat">
-<strong>1,204</strong>
-followers
-</div>
+            <div class="profile-stat">
+                <strong>1,204</strong>
+                followers
+            </div>
 
-<div class="profile-stat">
-<strong>318</strong>
-following
-</div>
+            <div class="profile-stat">
+                <strong>318</strong>
+                following
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<div class="profile-name">
-Your Name
-</div>
+    <div class="profile-name">
+        Your Name
+    </div>
 
-<div class="profile-bio">
-✨ living somewhere between reality & fiction
-</div>
+    <div class="profile-bio">
+        ✨ living somewhere between reality & fiction
+    </div>
 
-<button class="edit-profile">
-Edit profile
-</button>
+    <button class="edit-profile">
+        Edit profile
+    </button>
 
 </div>
 
 
 <div class="profile-tabs">
 
-<button>▦</button>
-<button>▶</button>
-<button>♙</button>
+    <button>▦</button>
+    <button>▶</button>
+    <button>♙</button>
 
 </div>
 
 
 <div class="grid">
 
-<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80">
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80">
 
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80">
 
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80">
 
-<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80">
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=80">
 
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80">
 
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80">
 
 </div>
+```
 
 </section>
-
 
 <!-- BOTTOM NAV -->
 
 <nav class="bottom-nav">
 
+```
 <button
-class="nav-button active"
-onclick="showPage('home', this)">
-⌂
+    class="nav-button active"
+    onclick="showPage('home', this)"
+>
+    ⌂
 </button>
 
 <button
-class="nav-button"
-onclick="showPage('explore', this)">
-⌕
+    class="nav-button"
+    onclick="showPage('explore', this)"
+>
+    ⌕
 </button>
 
 <button
-class="nav-button"
-onclick="alert('Dodawanie posta dodamy w następnej wersji ❤️')">
-＋
+    class="nav-button"
+    onclick="alert('Dodawanie posta dodamy w następnej wersji ❤️')"
+>
+    ＋
 </button>
 
 <button
-class="nav-button"
-onclick="alert('Aktywność dodamy w następnej wersji ❤️')">
-♡
+    class="nav-button"
+    onclick="alert('Aktywność dodamy w następnej wersji ❤️')"
+>
+    ♡
 </button>
 
 <button
-class="nav-button"
-onclick="showPage('profile', this)">
-◉
+    class="nav-button"
+    onclick="showPage('profile', this)"
+>
+    ◉
 </button>
+```
 
 </nav>
 
 </div>
 
-
 <script>
+
+/* PRZEŁĄCZANIE STRON */
 
 function showPage(page, button) {
 
-document.getElementById("home").style.display = "none";
-document.getElementById("explore").style.display = "none";
-document.getElementById("profile").style.display = "none";
+    document.getElementById("home").style.display = "none";
+    document.getElementById("explore").style.display = "none";
+    document.getElementById("profile").style.display = "none";
 
-document.getElementById(page).style.display = "block";
+    document.getElementById(page).style.display = "block";
 
-document.querySelectorAll(".nav-button")
-.forEach(btn => btn.classList.remove("active"));
+    document.querySelectorAll(".nav-button")
+        .forEach(btn => btn.classList.remove("active"));
 
-if (button) {
-button.classList.add("active");
+    if (button) {
+        button.classList.add("active");
+    }
+
+    window.scrollTo(0, 0);
 }
 
-window.scrollTo(0, 0);
+
+/* PROFIL */
+
+function showProfile() {
+    showPage("profile");
 }
 
+
+/* LAJKI */
 
 function likePost(element) {
 
-if (element.classList.contains("liked")) {
+    const post = element.closest(".post");
+    const likesElement = post.querySelector(".likes");
 
-element.classList.remove("liked");
-element.innerHTML = "♡";
+    let likes = parseInt(likesElement.dataset.likes);
 
-} else {
+    if (element.classList.contains("liked")) {
 
-element.classList.add("liked");
-element.innerHTML = "♥";
+        element.classList.remove("liked");
+        element.innerHTML = "♡";
+        likes--;
 
-}
+    } else {
+
+        element.classList.add("liked");
+        element.innerHTML = "♥";
+        likes++;
+
+    }
+
+    likesElement.dataset.likes = likes;
+    likesElement.innerHTML =
+        likes.toLocaleString("en-US") + " likes";
 }
 
 </script>
