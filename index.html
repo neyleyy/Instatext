@@ -4,79 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Instatext</title>
-.comment-section {
-    display: none;
-}
 
-.comment-section.open {
-    display: block;
-}
-
-.comment {
-    padding: 7px 0;
-    font-size: 14px;
-}
-
-.comment-content {
-    line-height: 1.4;
-}
-
-.reply-button {
-    border: 0;
-    background: none;
-    padding: 3px 0;
-    font-size: 12px;
-    font-weight: 600;
-    color: #777;
-    cursor: pointer;
-}
-
-.replies {
-    margin-left: 28px;
-}
-
-.reply {
-    padding-top: 7px;
-    font-size: 13px;
-}
-
-.reply-box {
-    display: flex;
-    gap: 7px;
-    margin-top: 7px;
-}
-
-.reply-input {
-    flex: 1;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    padding: 7px 10px;
-    font-size: 13px;
-    outline: none;
-}
-
-.reply-send {
-    border: 0;
-    background: none;
-    font-weight: 700;
-    color: #0095f6;
-    cursor: pointer;
-}
-
-.reply-cancel {
-    border: 0;
-    background: none;
-    font-size: 12px;
-    color: #777;
-    cursor: pointer;
-}
-
-.view-comments {
-    color: #777;
-    font-size: 13px;
-    cursor: pointer;
-    padding-top: 5px;
-}
 <style>
 
 * {
@@ -244,21 +172,25 @@ input {
     font-size: 14px;
 }
 
+
+/* =========================
+   COMMENTS
+========================= */
+
 .comments {
     padding: 0 13px 13px;
+}
+
+.view-comments {
     color: #777;
     font-size: 13px;
     cursor: pointer;
+    padding-top: 6px;
 }
-
-
-/* =========================
-   COMMENT SECTION
-========================= */
 
 .comment-section {
     display: none;
-    padding: 0 13px 15px;
+    padding-top: 4px;
 }
 
 .comment-section.open {
@@ -266,21 +198,92 @@ input {
 }
 
 .comment {
-    display: flex;
-    gap: 5px;
-    margin: 10px 0;
+    padding: 7px 0;
     font-size: 13px;
     line-height: 1.4;
 }
 
-.comment b {
+.comment-content {
+    line-height: 1.4;
+}
+
+.comment-content b {
     font-weight: 700;
+}
+
+.reply-button {
+    border: 0;
+    background: none;
+    padding: 3px 0;
+    margin-top: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #777;
+    cursor: pointer;
+}
+
+.replies {
+    margin-left: 28px;
+}
+
+.reply {
+    padding-top: 7px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.reply b {
+    font-weight: 700;
+}
+
+.reply-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.reply-input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 7px 10px;
+    font-size: 13px;
+    outline: none;
+    background: #fafafa;
+}
+
+.reply-input:focus {
+    border-color: #aaa;
+}
+
+.reply-send {
+    border: 0;
+    background: none;
+    font-weight: 700;
+    color: #0095f6;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.reply-cancel {
+    border: 0;
+    background: none;
+    font-size: 12px;
+    color: #777;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.comment-list {
+    margin-top: 3px;
 }
 
 .comment-form {
     display: flex;
     gap: 8px;
-    margin-top: 14px;
+    margin-top: 12px;
 }
 
 .comment-input {
@@ -390,7 +393,7 @@ input {
 
 
 /* =========================
-   GRIDS
+   GRID
 ========================= */
 
 .grid {
@@ -494,61 +497,41 @@ input {
 <section class="stories">
 
     <div class="story">
-
         <div class="story-ring">
             <img src="https://i.pravatar.cc/120?img=12">
         </div>
-
         <div>Your story</div>
-
     </div>
 
-
     <div class="story">
-
         <div class="story-ring">
             <img src="https://i.pravatar.cc/120?img=11">
         </div>
-
         <div>buckybarnes</div>
-
     </div>
 
-
     <div class="story">
-
         <div class="story-ring">
             <img src="https://i.pravatar.cc/120?img=13">
         </div>
-
         <div>steverogers</div>
-
     </div>
 
-
     <div class="story">
-
         <div class="story-ring">
             <img src="https://i.pravatar.cc/120?img=14">
         </div>
-
         <div>samwilson</div>
-
     </div>
 
-
     <div class="story">
-
         <div class="story-ring">
             <img src="https://i.pravatar.cc/120?img=15">
         </div>
-
         <div>natasha</div>
-
     </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -556,7 +539,6 @@ input {
 ========================= -->
 
 <article class="post">
-
 
     <div class="post-header">
 
@@ -566,7 +548,6 @@ input {
         >
 
         <div>
-
             <div class="username">
                 @buckybarnes
             </div>
@@ -574,7 +555,6 @@ input {
             <div class="location">
                 New York
             </div>
-
         </div>
 
     </div>
@@ -610,92 +590,103 @@ input {
     </div>
 
 
-    <div
-        class="likes"
-        data-likes="2481"
-    >
+    <div class="likes" data-likes="2481">
         2,481 likes
     </div>
 
 
     <div class="caption">
-
         <b>@buckybarnes</b>
         Long day. Don't ask.
-
     </div>
 
 
-   <div class="comments">
+    <div class="comments">
 
-    <div class="comment-section">
+        <div
+            class="view-comments"
+            onclick="toggleComments(this)"
+        >
+            View all 38 comments
+        </div>
 
-        <div class="comment">
-            <div class="comment-content">
-                <b>@steverogers</b> You okay?
+
+        <div class="comment-section">
+
+            <div class="comment">
+
+                <div class="comment-content">
+                    <b>@steverogers</b> You okay?
+                </div>
+
+                <button
+                    class="reply-button"
+                    onclick="showReplyBox(this)"
+                >
+                    Reply
+                </button>
+
+                <div class="replies"></div>
+
             </div>
 
-            <button class="reply-button" onclick="showReplyBox(this)">
-                Reply
-            </button>
 
-            <div class="replies"></div>
-        </div>
+            <div class="comment">
 
-        <div class="comment">
-            <div class="comment-content">
-                <b>@natasha</b> He never is.
+                <div class="comment-content">
+                    <b>@natasha</b> He never is.
+                </div>
+
+                <button
+                    class="reply-button"
+                    onclick="showReplyBox(this)"
+                >
+                    Reply
+                </button>
+
+                <div class="replies"></div>
+
             </div>
 
-            <button class="reply-button" onclick="showReplyBox(this)">
-                Reply
-            </button>
 
-            <div class="replies"></div>
-        </div>
+            <div class="comment">
 
-    </div>
+                <div class="comment-content">
+                    <b>@samwilson</b> That's definitely not convincing.
+                </div>
 
-    <div class="view-comments" onclick="toggleComments(this)">
-        View all 38 comments
-    </div>
+                <button
+                    class="reply-button"
+                    onclick="showReplyBox(this)"
+                >
+                    Reply
+                </button>
 
-</div>
+                <div class="replies"></div>
 
-
-    <div class="comment-section">
-
-
-        <div class="comment">
-            <b>@steverogers</b>
-            You okay?
-        </div>
+            </div>
 
 
-        <div class="comment">
-            <b>@samwilson</b>
-            That's definitely not convincing.
-        </div>
+            <div class="comment-list"></div>
 
 
-        <div class="comment-list"></div>
+            <div class="comment-form">
 
+                <input
+                    class="comment-input"
+                    type="text"
+                    placeholder="Add a comment..."
+                    onkeydown="handleCommentKey(event, this)"
+                >
 
-        <div class="comment-form">
+                <button
+                    class="comment-button"
+                    onclick="addComment(this)"
+                >
+                    Post
+                </button>
 
-            <input
-                class="comment-input"
-                type="text"
-                placeholder="Add a comment..."
-                onkeydown="handleCommentKey(event, this)"
-            >
-
-            <button
-                class="comment-button"
-                onclick="addComment(this)"
-            >
-                Post
-            </button>
+            </div>
 
         </div>
 
@@ -704,13 +695,11 @@ input {
 </article>
 
 
-
 <!-- =========================
      STEVE POST
 ========================= -->
 
 <article class="post">
-
 
     <div class="post-header">
 
@@ -764,91 +753,121 @@ input {
     </div>
 
 
-    <div
-        class="likes"
-        data-likes="1903"
-    >
+    <div class="likes" data-likes="1903">
         1,903 likes
     </div>
 
 
     <div class="caption">
-
         <b>@steverogers</b>
         Some things never change.
-
     </div>
 
 
-   <div class="comments">
+    <div class="comments">
 
-    <div class="comment-section">
+        <div
+            class="view-comments"
+            onclick="toggleComments(this)"
+        >
+            View all 21 comments
+        </div>
 
-        <div class="comment">
-            <div class="comment-content">
-                <b>@buckybarnes</b> Nice picture.
+
+        <div class="comment-section">
+
+            <div class="comment">
+
+                <div class="comment-content">
+                    <b>@buckybarnes</b> Nice picture.
+                </div>
+
+                <button
+                    class="reply-button"
+                    onclick="showReplyBox(this)"
+                >
+                    Reply
+                </button>
+
+                <div class="replies"></div>
+
             </div>
 
-            <button class="reply-button" onclick="showReplyBox(this)">
-                Reply
-            </button>
 
-            <div class="replies"></div>
-        </div>
+            <div class="comment">
 
-        <div class="comment">
-            <div class="comment-content">
-                <b>@samwilson</b> Where was this taken?
+                <div class="comment-content">
+                    <b>@samwilson</b> Where was this taken?
+                </div>
+
+                <button
+                    class="reply-button"
+                    onclick="showReplyBox(this)"
+                >
+                    Reply
+                </button>
+
+                <div class="replies"></div>
+
             </div>
 
-            <button class="reply-button" onclick="showReplyBox(this)">
-                Reply
-            </button>
 
-            <div class="replies"></div>
-        </div>
+            <div class="comment">
 
-    </div>
+                <div class="comment-content">
+                    <b>@buckybarnes</b> Some things never change.
+                </div>
 
-    <div class="view-comments" onclick="toggleComments(this)">
-        View all 21 comments
-    </div>
+                <button
+                    class="reply-button"
+                    onclick="showReplyBox(this)"
+                >
+                    Reply
+                </button>
 
-</div>
+                <div class="replies"></div>
 
-    <div class="comment-section">
-
-
-        <div class="comment">
-            <b>@buckybarnes</b>
-            Some things never change.
-        </div>
+            </div>
 
 
-        <div class="comment">
-            <b>@samwilson</b>
-            Old man.
-        </div>
+            <div class="comment">
+
+                <div class="comment-content">
+                    <b>@samwilson</b> Old man.
+                </div>
+
+                <button
+                    class="reply-button"
+                    onclick="showReplyBox(this)"
+                >
+                    Reply
+                </button>
+
+                <div class="replies"></div>
+
+            </div>
 
 
-        <div class="comment-list"></div>
+            <div class="comment-list"></div>
 
 
-        <div class="comment-form">
+            <div class="comment-form">
 
-            <input
-                class="comment-input"
-                type="text"
-                placeholder="Add a comment..."
-                onkeydown="handleCommentKey(event, this)"
-            >
+                <input
+                    class="comment-input"
+                    type="text"
+                    placeholder="Add a comment..."
+                    onkeydown="handleCommentKey(event, this)"
+                >
 
-            <button
-                class="comment-button"
-                onclick="addComment(this)"
-            >
-                Post
-            </button>
+                <button
+                    class="comment-button"
+                    onclick="addComment(this)"
+                >
+                    Post
+                </button>
+
+            </div>
 
         </div>
 
@@ -857,7 +876,6 @@ input {
 </article>
 
 </main>
-
 
 
 <!-- =========================
@@ -869,13 +887,11 @@ input {
     class="explore"
 >
 
-
     <input
         class="search"
         type="text"
         placeholder="Search"
     >
-
 
     <div class="grid">
 
@@ -896,7 +912,6 @@ input {
 </section>
 
 
-
 <!-- =========================
      PROFILE
 ========================= -->
@@ -906,65 +921,47 @@ input {
     class="profile"
 >
 
-
     <div class="profile-header">
 
-
         <div class="profile-main">
-
 
             <img
                 class="profile-avatar"
                 src="https://i.pravatar.cc/200?img=12"
             >
 
-
             <div class="profile-stats">
 
-
                 <div class="profile-stat">
-
                     <strong>12</strong>
                     posts
-
                 </div>
 
-
                 <div class="profile-stat">
-
                     <strong>1,204</strong>
                     followers
-
                 </div>
-
 
                 <div class="profile-stat">
-
                     <strong>318</strong>
                     following
-
                 </div>
-
 
             </div>
 
         </div>
 
-
         <div class="profile-name">
             Your Name
         </div>
-
 
         <div class="profile-bio">
             ✨ living somewhere between reality & fiction
         </div>
 
-
         <button class="edit-profile">
             Edit profile
         </button>
-
 
     </div>
 
@@ -997,13 +994,11 @@ input {
 </section>
 
 
-
 <!-- =========================
      BOTTOM NAV
 ========================= -->
 
 <nav class="bottom-nav">
-
 
     <button
         class="nav-button active"
@@ -1012,14 +1007,12 @@ input {
         ⌂
     </button>
 
-
     <button
         class="nav-button"
         onclick="showPage('explore', this)"
     >
         ⌕
     </button>
-
 
     <button
         class="nav-button"
@@ -1028,14 +1021,12 @@ input {
         ＋
     </button>
 
-
     <button
         class="nav-button"
         onclick="alert('Aktywność dodamy w następnej wersji ❤️')"
     >
         ♡
     </button>
-
 
     <button
         class="nav-button"
@@ -1044,19 +1035,16 @@ input {
         ◉
     </button>
 
-
 </nav>
 
-
 </div>
-
 
 
 <!-- =========================
      JAVASCRIPT
 ========================= -->
 
-<script> 
+<script>
 
 
 /* =========================
@@ -1066,33 +1054,21 @@ input {
 function showPage(page, button) {
 
     document.getElementById("home").style.display = "none";
-
     document.getElementById("explore").style.display = "none";
-
     document.getElementById("profile").style.display = "none";
-
 
     document.getElementById(page).style.display = "block";
 
-
     document.querySelectorAll(".nav-button").forEach(function(btn) {
-
         btn.classList.remove("active");
-
     });
 
-
     if (button) {
-
         button.classList.add("active");
-
     }
 
-
     window.scrollTo(0, 0);
-
 }
-
 
 
 /* =========================
@@ -1100,11 +1076,8 @@ function showPage(page, button) {
 ========================= */
 
 function showProfile() {
-
     showPage("profile");
-
 }
-
 
 
 /* =========================
@@ -1114,72 +1087,56 @@ function showProfile() {
 function likePost(element) {
 
     const post = element.closest(".post");
-
     const likesElement = post.querySelector(".likes");
-
 
     let likes = parseInt(
         likesElement.textContent.replace(/[^0-9]/g, "")
     );
 
-
     if (element.classList.contains("liked")) {
 
         element.classList.remove("liked");
-
         element.innerHTML = "♡";
-
         likes--;
 
-    }
-
-    else {
+    } else {
 
         element.classList.add("liked");
-
         element.innerHTML = "♥";
-
         likes++;
 
     }
 
-
     likesElement.textContent =
         likes.toLocaleString("en-US") + " likes";
-
 }
 
 
-
 /* =========================
-   KOMENTARZE — OTWIERANIE
+   OTWIERANIE KOMENTARZY
 ========================= */
 
 function toggleComments(element) {
 
-    const post = element.closest(".post");
+    const commentsBox =
+        element.parentElement.querySelector(".comment-section");
 
-    const section =
-        post.querySelector(".comment-section");
+    if (!commentsBox) {
+        return;
+    }
 
+    commentsBox.classList.toggle("open");
 
-    section.classList.toggle("open");
-
-
-    if (section.classList.contains("open")) {
+    if (commentsBox.classList.contains("open")) {
 
         element.textContent = "Hide comments";
 
-    }
-
-    else {
+    } else {
 
         element.textContent = "View all comments";
 
     }
-
 }
-
 
 
 /* =========================
@@ -1191,61 +1148,71 @@ function addComment(button) {
     const post =
         button.closest(".post");
 
-
     const input =
         post.querySelector(".comment-input");
-
 
     const commentList =
         post.querySelector(".comment-list");
 
-
     const text =
         input.value.trim();
 
-
     if (text === "") {
-
         return;
-
     }
-
 
     const comment =
         document.createElement("div");
 
-
     comment.className = "comment";
 
+
+    const content =
+        document.createElement("div");
+
+    content.className = "comment-content";
 
     const username =
         document.createElement("b");
 
-
     username.textContent = "@you";
 
+    content.appendChild(username);
 
-    comment.appendChild(username);
+    content.appendChild(
+        document.createTextNode(" " + text)
+    );
 
 
-    const textNode =
-        document.createTextNode(" " + text);
+    const replyButton =
+        document.createElement("button");
+
+    replyButton.className = "reply-button";
+    replyButton.textContent = "Reply";
+
+    replyButton.onclick = function() {
+        showReplyBox(this);
+    };
 
 
-    comment.appendChild(textNode);
+    const replies =
+        document.createElement("div");
 
+    replies.className = "replies";
+
+
+    comment.appendChild(content);
+    comment.appendChild(replyButton);
+    comment.appendChild(replies);
 
     commentList.appendChild(comment);
 
-
     input.value = "";
-
 }
 
 
-
 /* =========================
-   ENTER = DODAJ KOMENTARZ
+   ENTER = KOMENTARZ
 ========================= */
 
 function handleCommentKey(event, input) {
@@ -1255,34 +1222,51 @@ function handleCommentKey(event, input) {
         const button =
             input.parentElement.querySelector(".comment-button");
 
-
         addComment(button);
-
     }
-
 }
+
+
+/* =========================
+   REPLY — OTWIERANIE POLA
+========================= */
+
 function showReplyBox(button) {
 
-    const comment = button.closest(".comment");
+    const comment =
+        button.closest(".comment");
 
     if (comment.querySelector(".reply-box")) {
         return;
     }
 
-    const box = document.createElement("div");
+
+    const box =
+        document.createElement("div");
+
     box.className = "reply-box";
 
-    const input = document.createElement("input");
+
+    const input =
+        document.createElement("input");
+
     input.className = "reply-input";
     input.placeholder = "Write a reply...";
 
-    const send = document.createElement("button");
+
+    const send =
+        document.createElement("button");
+
     send.className = "reply-send";
     send.textContent = "Post";
 
-    const cancel = document.createElement("button");
+
+    const cancel =
+        document.createElement("button");
+
     cancel.className = "reply-cancel";
     cancel.textContent = "Cancel";
+
 
     box.appendChild(input);
     box.appendChild(send);
@@ -1292,63 +1276,90 @@ function showReplyBox(button) {
 
     input.focus();
 
-    send.onclick = function () {
+
+    send.onclick = function() {
+
         addReply(comment, input);
+
     };
 
-    cancel.onclick = function () {
+
+    cancel.onclick = function() {
+
         box.remove();
+
     };
 
-    input.addEventListener("keydown", function(event) {
 
-        if (event.key === "Enter") {
-            addReply(comment, input);
+    input.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Enter") {
+
+                addReply(comment, input);
+
+            }
+
+            if (event.key === "Escape") {
+
+                box.remove();
+
+            }
+
         }
-
-        if (event.key === "Escape") {
-            box.remove();
-        }
-
-    });
+    );
 }
 
 
+/* =========================
+   DODAWANIE REPLY
+========================= */
+
 function addReply(comment, input) {
 
-    const text = input.value.trim();
+    const text =
+        input.value.trim();
 
     if (text === "") {
         return;
     }
 
-    const replies = comment.querySelector(".replies");
 
-    const reply = document.createElement("div");
+    const replies =
+        comment.querySelector(".replies");
+
+
+    const reply =
+        document.createElement("div");
+
     reply.className = "reply";
 
-    reply.innerHTML =
-        "<b>@you</b> " +
-        escapeHTML(text);
+
+    const username =
+        document.createElement("b");
+
+    username.textContent = "@you";
+
+
+    reply.appendChild(username);
+
+    reply.appendChild(
+        document.createTextNode(" " + text)
+    );
+
 
     replies.appendChild(reply);
 
-    const box = comment.querySelector(".reply-box");
+
+    const box =
+        comment.querySelector(".reply-box");
 
     if (box) {
         box.remove();
     }
 }
 
-
-function escapeHTML(text) {
-
-    const div = document.createElement("div");
-
-    div.textContent = text;
-
-    return div.innerHTML;
-}
 </script>
 
 </body>
