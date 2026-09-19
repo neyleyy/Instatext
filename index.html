@@ -1,299 +1,299 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instatext</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instatext</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+* {
+box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            background: #fafafa;
-            font-family: Arial, sans-serif;
-            color: #111;
-        }
+body {
+margin: 0;
+background: #fafafa;
+font-family: Arial, sans-serif;
+color: #111;
+}
 
-        .app {
-            max-width: 430px;
-            margin: auto;
-            min-height: 100vh;
-            background: white;
-        }
+.app {
+max-width: 430px;
+margin: auto;
+min-height: 100vh;
+background: white;
+}
 
-        header {
-            height: 60px;
-            border-bottom: 1px solid #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 18px;
-            position: sticky;
-            top: 0;
-            background: white;
-            z-index: 10;
-        }
+header {
+height: 60px;
+border-bottom: 1px solid #ddd;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 18px;
+position: sticky;
+top: 0;
+background: white;
+z-index: 10;
+}
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-        }
+.logo {
+font-size: 25px;
+font-weight: bold;
+}
 
-        .header-icons {
-            font-size: 24px;
-        }
+.header-icons {
+font-size: 24px;
+}
 
-        .stories {
-            display: flex;
-            gap: 15px;
-            padding: 13px;
-            overflow-x: auto;
-            border-bottom: 1px solid #eee;
-        }
+.stories {
+display: flex;
+gap: 15px;
+padding: 13px;
+overflow-x: auto;
+border-bottom: 1px solid #eee;
+}
 
-        .story {
-            min-width: 62px;
-            text-align: center;
-            font-size: 11px;
-        }
+.story {
+min-width: 62px;
+text-align: center;
+font-size: 11px;
+}
 
-        .story img {
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #d62976;
-            padding: 2px;
-        }
+.story img {
+width: 58px;
+height: 58px;
+border-radius: 50%;
+object-fit: cover;
+border: 3px solid #d62976;
+padding: 2px;
+}
 
-        .post {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 15px;
-        }
+.post {
+border-bottom: 1px solid #ddd;
+padding-bottom: 15px;
+}
 
-        .post-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px;
-        }
+.post-header {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 12px;
+}
 
-        .avatar {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+.avatar {
+width: 38px;
+height: 38px;
+border-radius: 50%;
+object-fit: cover;
+}
 
-        .username {
-            font-weight: bold;
-            font-size: 14px;
-        }
+.username {
+font-weight: bold;
+font-size: 14px;
+}
 
-        .location {
-            font-size: 11px;
-            color: #777;
-        }
+.location {
+font-size: 11px;
+color: #777;
+}
 
-        .post-image {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-        }
+.post-image {
+width: 100%;
+aspect-ratio: 1 / 1;
+object-fit: cover;
+}
 
-        .actions {
-            display: flex;
-            gap: 18px;
-            padding: 10px 13px 5px;
-            font-size: 25px;
-        }
+.actions {
+display: flex;
+gap: 18px;
+padding: 10px 13px 5px;
+font-size: 25px;
+}
 
-        .save {
-            margin-left: auto;
-        }
+.save {
+margin-left: auto;
+}
 
-        .likes {
-            padding: 0 13px;
-            font-weight: bold;
-            font-size: 14px;
-        }
+.likes {
+padding: 0 13px;
+font-weight: bold;
+font-size: 14px;
+}
 
-        .caption {
-            padding: 6px 13px;
-            font-size: 14px;
-        }
+.caption {
+padding: 6px 13px;
+font-size: 14px;
+}
 
-        .comments {
-            padding: 0 13px;
-            color: #777;
-            font-size: 13px;
-        }
+.comments {
+padding: 0 13px;
+color: #777;
+font-size: 13px;
+}
 
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: min(100%, 430px);
-            height: 60px;
-            background: white;
-            border-top: 1px solid #ddd;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            font-size: 25px;
-            z-index: 20;
-        }
+.bottom-nav {
+position: fixed;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: min(100%, 430px);
+height: 60px;
+background: white;
+border-top: 1px solid #ddd;
+display: flex;
+justify-content: space-around;
+align-items: center;
+font-size: 25px;
+z-index: 20;
+}
 
-        .content {
-            padding-bottom: 70px;
-        }
-    </style>
+.content {
+padding-bottom: 70px;
+}
+</style>
 </head>
 
 <body>
 
 <div class="app">
 
-    <header>
-        <div class="logo">Instatext</div>
-        <div class="header-icons">♡　✉</div>
-    </header>
+<header>
+<div class="logo">Instatext</div>
+<div class="header-icons">♡　✉</div>
+</header>
 
-    <main class="content">
+<main class="content">
 
-        <!-- STORIES -->
+<!-- STORIES -->
 
-        <div class="stories">
+<div class="stories">
 
-            <div class="story">
-                <img src="https://i.pravatar.cc/100?img=12">
-                <div>Your story</div>
-            </div>
+<div class="story">
+<img src="https://i.pravatar.cc/100?img=12">
+<div>Your story</div>
+</div>
 
-            <div class="story">
-                <img src="https://i.pravatar.cc/100?img=11">
-                <div>buckybarnes</div>
-            </div>
+<div class="story">
+<img src="https://i.pravatar.cc/100?img=11">
+<div>buckybarnes</div>
+</div>
 
-            <div class="story">
-                <img src="https://i.pravatar.cc/100?img=13">
-                <div>steverogers</div>
-            </div>
+<div class="story">
+<img src="https://i.pravatar.cc/100?img=13">
+<div>steverogers</div>
+</div>
 
-            <div class="story">
-                <img src="https://i.pravatar.cc/100?img=14">
-                <div>samwilson</div>
-            </div>
+<div class="story">
+<img src="https://i.pravatar.cc/100?img=14">
+<div>samwilson</div>
+</div>
 
-            <div class="story">
-                <img src="https://i.pravatar.cc/100?img=15">
-                <div>natasha</div>
-            </div>
+<div class="story">
+<img src="https://i.pravatar.cc/100?img=15">
+<div>natasha</div>
+</div>
 
-        </div>
-
-
-        <!-- POST 1 -->
-
-        <article class="post">
-
-            <div class="post-header">
-
-                <img class="avatar"
-                     src="https://i.pravatar.cc/100?img=11">
-
-                <div>
-                    <div class="username">@buckybarnes</div>
-                    <div class="location">New York</div>
-                </div>
-
-            </div>
-
-            <img class="post-image"
-                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80">
-
-            <div class="actions">
-                <span>♡</span>
-                <span>💬</span>
-                <span>➤</span>
-                <span class="save">♡</span>
-            </div>
-
-            <div class="likes">
-                2,481 likes
-            </div>
-
-            <div class="caption">
-                <b>@buckybarnes</b>
-                Long day. Don't ask.
-            </div>
-
-            <div class="comments">
-                View all 38 comments
-            </div>
-
-        </article>
+</div>
 
 
-        <!-- POST 2 -->
+<!-- POST 1 -->
 
-        <article class="post">
+<article class="post">
 
-            <div class="post-header">
+<div class="post-header">
 
-                <img class="avatar"
-                     src="https://i.pravatar.cc/100?img=13">
+<img class="avatar"
+src="https://i.pravatar.cc/100?img=11">
 
-                <div>
-                    <div class="username">@steverogers</div>
-                    <div class="location">Brooklyn</div>
-                </div>
+<div>
+<div class="username">@buckybarnes</div>
+<div class="location">New York</div>
+</div>
 
-            </div>
+</div>
 
-            <img class="post-image"
-                 src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=900&q=80">
+<img class="post-image"
+src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80">
 
-            <div class="actions">
-                <span>♡</span>
-                <span>💬</span>
-                <span>➤</span>
-                <span class="save">♡</span>
-            </div>
+<div class="actions">
+<span>♡</span>
+<span>💬</span>
+<span>➤</span>
+<span class="save">♡</span>
+</div>
 
-            <div class="likes">
-                1,903 likes
-            </div>
+<div class="likes">
+2,481 likes
+</div>
 
-            <div class="caption">
-                <b>@steverogers</b>
-                Some things never change.
-            </div>
+<div class="caption">
+<b>@buckybarnes</b>
+Long day. Don't ask.
+</div>
 
-            <div class="comments">
-                View all 21 comments
-            </div>
+<div class="comments">
+View all 38 comments
+</div>
 
-        </article>
-
-    </main>
+</article>
 
 
-    <!-- DOLNA NAWIGACJA -->
+<!-- POST 2 -->
 
-    <nav class="bottom-nav">
+<article class="post">
 
-        <span>⌂</span>
-        <span>⌕</span>
-        <span>＋</span>
-        <span>♡</span>
-        <span>◉</span>
+<div class="post-header">
 
-    </nav>
+<img class="avatar"
+src="https://i.pravatar.cc/100?img=13">
+
+<div>
+<div class="username">@steverogers</div>
+<div class="location">Brooklyn</div>
+</div>
+
+</div>
+
+<img class="post-image"
+src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=900&q=80">
+
+<div class="actions">
+<span>♡</span>
+<span>💬</span>
+<span>➤</span>
+<span class="save">♡</span>
+</div>
+
+<div class="likes">
+1,903 likes
+</div>
+
+<div class="caption">
+<b>@steverogers</b>
+Some things never change.
+</div>
+
+<div class="comments">
+View all 21 comments
+</div>
+
+</article>
+
+</main>
+
+
+<!-- DOLNA NAWIGACJA -->
+
+<nav class="bottom-nav">
+
+<span>⌂</span>
+<span>⌕</span>
+<span>＋</span>
+<span>♡</span>
+<span>◉</span>
+
+</nav>
 
 </div>
 
